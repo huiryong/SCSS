@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <input type="text" class="jsInput" />
+    <button onclick="onSend()">送信</button>
+    <button onclick="onRemuve()">削除</button>
+
+    <div class="jsResult"></div>
+    <script>
+      axios.get("https://api.hnpwa.com/v0/news/1.json").then((res) => {
+        const result = res.data;
+        let html_teamplate = "<ul class='signup__contents__list jsContents'>";
+        for (i = 0; i < result.length; i++) {
+          html_teamplate += `
+              <li>${i + 1}番 ${result[i].user}</li>
+            `;
+          // html_teamplate = html_teamplate + <div>${result[i].domain}</div>
+        }
+        html_teamplate += "</ul>";
+        const a = document.querySelector(".jsResult");
+        a.innerHTML = html_teamplate;
+      });
+
+      function onSend() {
+        const b = document.querySelector(".jsInput").value;
+        const c = document.querySelector(".jsContents");
+        c.insertAdjacentHTML("beforeend", `<li>${b}</li>`);
+      }
+    </script>
+  </body>
+</html>

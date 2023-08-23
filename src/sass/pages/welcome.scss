@@ -1,0 +1,98 @@
+.welcom {
+  background-color: #ff3366;
+  height: 800px;
+  .welcom_title {
+    font-size: 24px;
+    font-weight: bold;
+    width: 300px;
+    margin: 0 auto;
+    padding: 100px 0 30px 0;
+    color: #fff;
+  }
+  .welcom_content {
+    padding: 50px;
+    width: 280px;
+    background-color: #fff;
+    border-radius: 20px;
+    height: 500px;
+    margin: 0 auto;
+    .welcom_content_title {
+      font-size: 16px;
+      font-weight: 900;
+      width: 200px;
+    }
+    .welcom_content_subtitle {
+      font-size: 12px;
+      margin-top: 8px;
+    }
+    .welcom_content_icon {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      display: flex;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      width: 280px;
+      p {
+        text-shadow: #9b9b9b;
+        width: 120px;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+      }
+      :first-child {
+        border-right: #9b9b9b 1px solid;
+      }
+    }
+    .welcom_content_line {
+      border-top: #9b9b9b 2px solid;
+      margin-bottom: 30px;
+      position: relative;
+      p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        display: inline-block;
+        width: 16px;
+        color: #9b9b9b;
+        background-color: #fff;
+        line-height: 16px;
+        padding: 4px;
+        border: #9b9b9b 2px solid;
+        border-radius: 50%;
+      }
+    }
+    .signup__contents__submit {
+      button {
+        width: 285px;
+        padding: 10px;
+        font-size: 14px;
+        height: 40px;
+        margin-top: 20px;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 12px;
+        text-align: center;
+        a {
+          text-decoration: none;
+          color: #ff3366;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+input {
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #9b9b9b;
+  padding: 12px 16px; // 12px 16px 12px 16px
+  margin-bottom: 10px;
+  :first-child {
+    margin-top: 30px;
+  }
+}

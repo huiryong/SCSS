@@ -1,0 +1,13 @@
+// common
+@use "./common/reset";
+@use "./common/button";
+@use "./common/input";
+@use "./common/modal";
+@use "./common/menu.scss";
+@use "./common/utli.scss";
+
+// pages
+@use "./pages/signup";
+@use "./pages/welcome";
+@use "./pages/number.scss";
+@use "./pages/sign.scss";

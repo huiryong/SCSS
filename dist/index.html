@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="css/index.css" rel="stylesheet"></head>
+  </head>
+  <body>
+    <ul class="signup__contents_menu">
+      <li><a href="#">TOP</a></li>
+      <li><a href="welcom.html">ABOUT</a></li>
+      <li><a href="js.html">MENU</a></li>
+      <li><a href="ajax.html">AJAX</a></li>
+      <li><a href="number.html">ADRESS</a></li>
+      <li><a href="jquery.html">JQUERY</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="signup.html">SINGUP</a></li>
+    </ul>
+
+    <!-- <img src="img/2023.png" alt=""/> -->
+
+    <div class="signup">
+      <div class="signup__contents">
+        <div class="signup__contents__title">Let’s verify your email</div>
+        <div class="signup__contents__subtitle">
+          Enter your personal email ID
+        </div>
+        <div class="signup__contents__input">
+          <input type="text" class="input" />
+        </div>
+        <div class="signup__contents__subtitle">
+          We’ll send an OTP to this email
+        </div>
+
+        <ul class="signup__contents_list">
+          
+        </ul> 
+
+        <div class="signup__contents__submit">
+          <button class="btn btn__submit btn__large" id="modal-open">
+            Send OTP
+          </button>
+
+          <div class="result"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div class="modal-content">
+        <p class="modal-content-p">
+          modalmodalmodalmodalmodalmodalmodalmodalmodalmodalmodalmodalmodal
+        </p>
+        <button id="modal-close">×</button>
+      </div>
+    </div>
+
+    <!-- <button class="btn btn__primary">Primary</button>
+    <button class="btn btn__secondary">Secondary</button>
+    <button class="btn btn__success">Success</button>
+    <a href=""></a> -->
+
+    <script>
+      axios.get("https://api.hnpwa.com/v0/news/1.json").then((res) => {
+        const result = res.date;
+
+        let htmltemplete = "<div>";
+
+        for (i = 0; i < result.length; i++) {
+          htmltemplete += `<div>
+              <div>${i + 1}番${result[i].domain}</div>
+              <div>${i + 1}番${result[i].user}</div>
+               </div><hr />`;
+        }
+
+        htmltemplete += "</div>";
+
+        const target = document.querySelector(".result");
+        target.innerHTML = htmltemplete;
+      });
+
+      axios.get("https://api.hnpwa.com/v0/news/1.json").then((res) => {
+        const result = res.data;
+        let html_teamplate = "<ul class='signup__contents_list'>";
+        for (i = 0; i < result.length; i++) {
+          html_teamplate += `
+            <li>${i + 1}番 ${result[i].domain}</li>
+            <li>${i + 1}番 ${result[i].user}</li>
+          <hr />
+          `;
+          html_teamplate = html_teamplate + <div>${result[i].domain}</div>
+        }
+        html_teamplate += "</ul>";
+        const a = document.querySelector(".result");
+        a.innerHTML = html_teamplate;
+      });
+    </script>
+    <script src="./js/index.js">
+    </script>
+  </body>
+</html>
